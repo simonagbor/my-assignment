@@ -1,0 +1,19 @@
+name:deploy to github pages
+on:
+push:branches:
+-main
+
+jobs:
+deploy:
+runs-on:ubuntu-latest
+steps:
+names: checkout repository
+uses: actions/checkout@v3
+name: set up pages
+uses:
+actios/upload-configure-pages@v3
+
+name: upload artifact
+uses:
+actions/upload-pages-artifact@v2
+
